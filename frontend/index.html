@@ -8,12 +8,43 @@ SPDX-License-Identifier: Apache-2.0
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSAF Provider Scan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title shown in the browser tab -->
+  <title>CSAF Provider Online Check</title>
+
+  <!-- Brief description for search engines and link previews -->
+  <meta name="description" content="Validate CSAF (Common Security Advisory Framework) providers online. Run the official csaf_checker and validator tools directly in your browser.">
+
+  <!--
+    JetBrains Mono — a developer-focused monospace typeface.
+    Loaded from Google Fonts; the app falls back to Fira Code / Cascadia Code
+    / system monospace if the request fails (see CSS custom properties in App.vue).
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /*
+      Set the page background before Vue mounts to prevent a white flash
+      between HTML parse and first component render.
+    */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #0a0e17;
+      /* Prevent horizontal scroll on small viewports */
+      overflow-x: hidden;
+    }
+  </style>
 </head>
 <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+  <!-- Vue mounts the entire application into this element -->
+  <div id="app"></div>
+
+  <!-- Vite entry point — must be type="module" for ES module imports to work -->
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

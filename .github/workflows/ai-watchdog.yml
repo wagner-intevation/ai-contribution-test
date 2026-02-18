@@ -1,0 +1,11 @@
+name: AI Detection
+on: [pull_request]
+jobs:
+  detect-ai:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: AI Watchdog
+        uses: Citric-Sheep/ai-watchdog@v0.2.3
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}

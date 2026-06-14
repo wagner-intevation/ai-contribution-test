@@ -1,3 +1,10 @@
+<!--
+SPDX-FileCopyrightText: 2026 German Federal Office for Information Security (BSI) <https://www.bsi.bund.de>
+Software-Engineering: 2026 Intevation GmbH <https://intevation.de>
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # csaf-tools/provider-online-check
 
 ## Introduction
@@ -185,7 +192,9 @@ docker compose -f docker-compose.prod.yml up -d --build
 
 ## License
 
+```
 SPDX-License-Identifier: Apache-2.0
 
 SPDX-FileCopyrightText: 2025 German Federal Office for Information Security (BSI) <https://www.bsi.bund.de>
 Software-Engineering: 2025 Intevation GmbH <https://intevation.de>
+```

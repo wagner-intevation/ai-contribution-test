@@ -73,7 +73,7 @@ jobs:
             bot_pattern=$(IFS='|'; echo "${BOT_AUTHOR_PATTERNS[*]}")
             if echo "$author" | grep -iqE "$bot_pattern"; then
               short=$(git show -s --format="%h" "$commit")
-              FOUND_COMMITS="${FOUND_COMMITS}\n- \`${short}\` -${subject} (LLM bot author: ${author})"
+              FOUND_COMMITS="${FOUND_COMMITS}\n- \`${short}\`: ${subject} (LLM bot author: ${author})"
               FOUND_ANY=true
             fi
           done < <(git log --format="%H" "${BASE_SHA}..${HEAD_SHA}")

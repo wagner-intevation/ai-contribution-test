@@ -3,18 +3,20 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-name: AI Detection
+name: AI Code Trust Check
 on: [pull_request]
+
 jobs:
-  detect-ai:
+  trust-check:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: write
     steps:
-      - uses: actions/checkout@v6
-      - name: AI Watchdog
-        uses: Citric-Sheep/ai-watchdog@v0.2.3
+      - uses: actions/checkout@v4
+
+      - name: Validate AI Code
+        uses: rudra496/ai-code-trust-validator@v0.5.1
         with:
-          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: '.'
+          min-score: '75'
+          format: 'sarif'

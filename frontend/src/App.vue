@@ -390,6 +390,21 @@ export default {
         return String(value)
       }
     },
+
+    /**
+     * Truncates a string to the specified maximum length.
+     * If the string exceeds maxLength, it is cut off and an ellipsis ('...')
+     * is appended to indicate that the content has been truncated.
+     * If the string is within the allowed length, it is returned unchanged.
+     *
+     * @param {string} str - The input string to truncate.
+     * @param {number} maxLength - The maximum number of characters allowed.
+     * @returns {string} The truncated string with ellipsis, or the original string.
+     */
+    truncate(str, maxLength) {
+      if (str.length <= maxLength) return str
+      return str.slice(0, maxLength) + '...'
+    },
   },
 
   // Fetch health status as soon as the component is mounted in the DOM

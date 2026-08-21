@@ -17,3 +17,6 @@ jobs:
       contents: read
     steps:
       - uses: Intevation/ai-contribution-action@main
+      - uses: csaf-auxiliary/ai-contribution-action@main
+        with:
+          comment-on-detection: true

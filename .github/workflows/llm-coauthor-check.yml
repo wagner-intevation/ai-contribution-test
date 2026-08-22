@@ -15,5 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      pull-requests: write
     steps:
       - uses: Intevation/ai-contribution-action@main
+        with:
+          comment-on-detection: true
